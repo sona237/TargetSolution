@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--margins-->
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+
+    <!--view heights and padding-->
+    <dimen name="height_xsmall">1dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+
+    <!--icon sizes-->
+    <dimen name="icon_size_medium">36dp</dimen>
+    <dimen name="deal_list_item_image_size">80dp</dimen>
+
+    <!--text sizes-->
+    <dimen name="textSizeSmall">16sp</dimen>
+    <dimen name="textSizeMedium">18sp</dimen>
+
+    <!--radius-->
+    <dimen name="textViewBgRadius">10dp</dimen>
+
+</resources>
