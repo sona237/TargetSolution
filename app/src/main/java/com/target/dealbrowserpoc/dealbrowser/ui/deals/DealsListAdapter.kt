@@ -21,7 +21,7 @@ class DealsListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         const val LOADING = 2
     }
 
-    val mDeals: MutableList<Deal> = mutableListOf()
+    private val mDeals: MutableList<Deal> = mutableListOf()
     private lateinit var mOnDealSelect: (Deal, Int) -> Unit
     private lateinit var mContext: Context
 
@@ -40,7 +40,6 @@ class DealsListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when(viewType){
             LOADING -> DealLoadingViewHolder(
-                mContext,
                 LayoutInflater.from(mContext)
                     .inflate(R.layout.view_list_item_loading, parent, false)
             )
@@ -57,8 +56,6 @@ class DealsListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         if (items == null) return
         mDeals.clear()
 
-
-
         items.forEach{
             it.viewType = DEALS_LIST_ITEM
             mDeals.add(it)
@@ -69,7 +66,7 @@ class DealsListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             deal.viewType = LOADING
             mDeals.add(deal)
         }else{
-            if(mDeals.size > 0 && mDeals.get(mDeals.size.minus(1)).viewType == LOADING){
+            if(mDeals.size > 0 && mDeals[mDeals.size.minus(1)].viewType == LOADING){
                 mDeals.removeAt(mDeals.size.minus(1))
             }
         }
@@ -89,19 +86,24 @@ class DealsListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             itemView.let {
 
                 it.setOnClickListener {
+                    println("@#@#clicked")
                     onDealSelected.invoke(deal, position)
                 }
 
                 it.tvTitle.text = deal.title
                 it.tvAisle.text = deal.aisle
-                it.tvSalePrice.text = deal.salePrice
+                it.tvSalePrice.text = deal.salePrice?: deal.price
+                it.tvShip.text = "ship"
+                it.tvMedian.text = "or"
+
+             //   val imageUrl = "https://upload.wikimedia.org/wikipedia/commons/c/c5/Target_Corporation_logo_%28vector%29.svg"
 
 
                 try {
                     it.itemImage.loadImageUrl(
                         deal.imageUrl ?: "",
                         roundedCorners = false,
-                        placeholder = R.drawable.image_not_available
+                        placeholder = R.drawable.ic_target_logo
                     )
 
                 } catch (e: Exception) {
@@ -129,7 +131,6 @@ class DealsListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     open class DealLoadingViewHolder(
-        var context: Context,
         var view: View
     ) : RecyclerView.ViewHolder(view) {
         private val shimmerFrameLayout: ShimmerFrameLayout = view.shimmerFrameLayout

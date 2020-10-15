@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Target Deals Browser</string>
+    <string name="noNetwork">Please check your network connection</string>
+    <string name="noDealsFound">No deals found</string>
+
 </resources>

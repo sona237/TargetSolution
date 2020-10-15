@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/itemImage"
         android:layout_width="@dimen/deal_list_item_image_size"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/deal_list_item_image_size"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
@@ -22,9 +22,10 @@
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:textSize="@dimen/textSizeMedium"
         android:textColor="@color/gray_color"
+        android:gravity="center_vertical"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
@@ -33,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/itemImage"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="sint aliqua mollit duis ullamcosgfjh sdhf"
+        tools:text="sint aliqua mollit hf"
         />
 
     <View
@@ -42,7 +43,7 @@
         android:layout_height="@dimen/height_xsmall"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:layout_marginEnd="@dimen/margin_small"
-        android:background="@color/gray_color"
+        android:background="@color/gray_light_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/tvTitle"
         app:layout_constraintTop_toBottomOf="@id/tvTitle" />
@@ -108,6 +109,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:text="B2"
         />
+
+    <View
+        android:id="@+id/viewDealSeparator"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/height_xsmall"
+        android:background="@color/gray_light_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 
 
