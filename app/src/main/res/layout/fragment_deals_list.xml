@@ -10,10 +10,10 @@
         android:id="@+id/rvDealsList"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_small"
-        android:paddingStart="@dimen/margin_small"
-        android:paddingEnd="@dimen/margin_small"
-        android:paddingBottom="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_x_small"
+        android:paddingStart="@dimen/margin_x_small"
+        android:paddingEnd="@dimen/margin_x_small"
+        android:paddingBottom="@dimen/margin_x_small"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,17 +23,15 @@
         android:id="@+id/shimmerFrameLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_small"
-        android:paddingStart="@dimen/margin_small"
-        android:paddingEnd="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_x_small"
+        android:paddingStart="@dimen/margin_x_small"
+        android:paddingEnd="@dimen/margin_x_small"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <include layout="@layout/view_list_loading" />
-
     </com.facebook.shimmer.ShimmerFrameLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

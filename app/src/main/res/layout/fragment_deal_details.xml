@@ -23,20 +23,124 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/dealDetails"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/white_color">
 
             <ImageView
                 android:id="@+id/itemImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/margin_large"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:src="@drawable/image_not_available"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tvSalePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_xlarge"
+                android:textStyle="bold"
+                android:textColor="@color/actionbar_color"
+                android:layout_marginTop="@dimen/margin_x_large"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/itemImage"
+                tools:text="$8.98"/>
+
+            <TextView
+                android:id="@+id/tvLabelRegPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_large"
+                android:textColor="@color/gray_separator"
+                android:text="@string/regPrice"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginEnd="@dimen/margin_x_small"
+                app:layout_constraintEnd_toStartOf="@id/tvPrice"
+                app:layout_constraintBottom_toBottomOf="@id/tvSalePrice" />
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_large"
+                android:textColor="@color/gray_separator"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/tvSalePrice"
+                tools:text="$17.99" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_xlarge"
+                android:textColor="@color/gray_color"
+                android:fontFamily="sans-serif"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPrice"
+                tools:text="Tiered Lace Tank - Lily Star"/>
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/dark_gray_color"
+                android:fontFamily="sans-serif-black"
+                android:layout_marginTop="@dimen/margin_x_small"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                tools:text="minim ad et minim ipsum duis irure pariatur deserunt eu cillum anim ipsum velit tempor eu pariatur sunt mollit tempor ut tempor exercitation occaecat ad et veniam et excepteur velit esse eu et ut ipsum consectetur aliquip do quis voluptate cupidatat eu ut consequat adipisicing occaecat adipisicing proident laborum laboris deserunt in laborum est anim ad non"/>
+
+            <Button
+                android:id="@+id/btnAddToList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/addToList"
+                android:textSize="@dimen/text_size_large"
+                android:textColor="@color/dark_gray_color"
+                android:textAllCaps="false"
+                android:background="@color/gray_button"
+                android:paddingTop="@dimen/padding_small"
+                android:paddingBottom="@dimen/padding_small"
+                android:layout_marginStart="@dimen/margin_x_small"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_marginBottom="@dimen/margin_large"
+                app:layout_constraintEnd_toStartOf="@id/btnAddToCart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDescription"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <Button
+                android:id="@+id/btnAddToCart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/addToCart"
+                android:textSize="@dimen/text_size_large"
+                android:textAllCaps="false"
+                android:textColor="@color/white_color"
+                android:background="@color/actionbar_color"
+                android:paddingTop="@dimen/padding_small"
+                android:paddingBottom="@dimen/padding_small"
+                android:layout_marginEnd="@dimen/margin_x_small"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnAddToList"
+                app:layout_constraintTop_toTopOf="@id/btnAddToList"
+                app:layout_constraintBottom_toBottomOf="@id/btnAddToList"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

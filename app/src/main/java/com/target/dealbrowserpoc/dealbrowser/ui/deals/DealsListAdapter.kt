@@ -103,7 +103,7 @@ class DealsListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                     it.itemImage.loadImageUrl(
                         deal.imageUrl ?: "",
                         roundedCorners = false,
-                        placeholder = R.drawable.ic_target_logo
+                        placeholder = R.drawable.default_item
                     )
 
                 } catch (e: Exception) {
