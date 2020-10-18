@@ -41,6 +41,10 @@ class DealsListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        if (activity != null) {
+            (activity as DealsListActivity).supportActionBar?.title = getString(R.string.allDeals)
+        }
         observeDealsList()
         setupList()
     }
@@ -82,7 +86,7 @@ class DealsListFragment : Fragment() {
                 }
                 NetworkResponse.OFFLINE -> {
                     isLoading(false)
-                    Toast.makeText(context,it.errorMessage,Toast.LENGTH_LONG).show()
+                    showEmptyView(it.errorMessage)
                 }
                 NetworkResponse.SUCCEED -> {
                     isLoading(false)
@@ -91,16 +95,22 @@ class DealsListFragment : Fragment() {
                             dealsListAdapter.setData(deals, false)
                         }
                     }else{
-                        Toast.makeText(context,getString(R.string.noDealsFound),Toast.LENGTH_LONG).show()
+                        showEmptyView(getString(R.string.noDealsFound))
                     }
                 }
                 NetworkResponse.FAILED -> {
                     isLoading(false)
-                    Toast.makeText(context,it.errorMessage,Toast.LENGTH_LONG).show()
+                    showEmptyView(it.errorMessage)
                 }
             }
 
         })
+    }
+
+    private fun showEmptyView(message : String?){
+        emptyViewLayout.visibility = View.VISIBLE
+        tvEmptyMsg.text = message
+
     }
 
     private fun isLoading(isVisible: Boolean) {

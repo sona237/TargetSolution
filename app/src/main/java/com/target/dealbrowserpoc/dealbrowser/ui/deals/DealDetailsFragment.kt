@@ -34,8 +34,10 @@ class DealDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        if (activity != null) {
+            (activity as DealsListActivity).supportActionBar?.title = getString(R.string.dealDetails)
+        }
         setUpView()
-        println("${dealsViewModel.mSelectedDeal.value?.title}")
     }
 
     private fun setUpView(){

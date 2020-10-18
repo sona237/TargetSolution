@@ -10,6 +10,7 @@ import com.target.dealbrowserpoc.dealbrowser.R
 import com.target.dealbrowserpoc.dealbrowser.enitity.DealsNavigationSteps
 import com.target.dealbrowserpoc.dealbrowser.viewModel.DealsViewModel
 import com.target.dealbrowserpoc.dealbrowser.viewModel.DealsViewModelFactory
+import kotlinx.android.synthetic.main.activity_deals_list.*
 
 class DealsListActivity : AppCompatActivity() {
 
@@ -27,6 +28,8 @@ class DealsListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_deals_list)
+        setSupportActionBar(app_toolbar)
+
         observeNavigationSteps()
 
         mFragmentManager = supportFragmentManager

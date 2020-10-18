@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.deals.DealsListActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        style="@style/TargetActionBar"
+        android:id="@+id/app_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="4dp"
+        app:titleTextColor="@color/white_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
     <FrameLayout
         android:id="@+id/dealsListContainer"
         android:layout_width="0dp"
@@ -13,6 +25,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/app_toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

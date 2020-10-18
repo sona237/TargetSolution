@@ -67,7 +67,7 @@
         android:id="@+id/tvShip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/text_size_medium"
+        android:textSize="@dimen/text_size_small"
         android:textColor="@color/gray_color"
         android:textStyle="bold"
         android:layout_marginEnd="@dimen/margin_small"
@@ -95,10 +95,11 @@
 
     <TextView
         android:id="@+id/tvAisle"
-        android:layout_width="@dimen/icon_size_medium"
-        android:layout_height="@dimen/icon_size_medium"
+        android:layout_width="@dimen/icon_size_large"
+        android:layout_height="@dimen/icon_size_large"
         android:textSize="@dimen/text_size_small"
         android:textColor="@color/actionbar_color"
+        android:gravity="center"
         android:padding="@dimen/padding_small"
         android:background="@drawable/bg_gray_rounded_border"
         android:layout_marginTop="@dimen/activity_vertical_margin"
@@ -107,7 +108,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/viewSeparator"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:text="B2"
+        tools:text="g8"
         />
 
     <View

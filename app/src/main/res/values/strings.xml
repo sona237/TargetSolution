@@ -5,6 +5,6 @@
     <string name="regPrice">Reg: </string>
     <string name="addToList">add to list</string>
     <string name="addToCart">add to cart</string>
-
-
+    <string name="allDeals">All Deals</string>
+    <string name="dealDetails">Deal Details</string>
 </resources>
