@@ -12,7 +12,7 @@ class TargetRealmMigration : RealmMigration {
 
     override fun migrate(realm: DynamicRealm, oldVersion: Long, newVersion: Long) {
         realmSchema = realm.schema
-        Log.e("Migration", "old version $oldVersion currVer $newVersion")
+        TargetLogger.event("Migration : old version $oldVersion currVer $newVersion")
         this.oldVersion = oldVersion.toInt()
         checkMigrationNeeded(this.oldVersion)
     }

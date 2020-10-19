@@ -11,20 +11,28 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/white_color"
-        android:clipToPadding="false"
-        android:descendantFocusability="blocksDescendants"
+        android:fillViewport="true"
         app:layout_constrainedHeight="false"
+        android:clipToPadding="false"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:descendantFocusability="blocksDescendants"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnAddToList"
         app:layout_constraintVertical_bias="0.0">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/dealDetails"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white_color">
+            android:layout_height="0dp"
+            android:background="@color/white_color"
+            android:nestedScrollingEnabled="false"
+
+            android:layout_marginBottom="@dimen/margin_medium"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnAddToList">
 
             <ImageView
                 android:id="@+id/itemImage"
@@ -103,9 +111,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvTitle"
-                tools:text="minim ad et minim ipsum duis irure pariatur deserunt eu cillum anim ipsum velit tempor eu pariatur sunt mollit tempor ut tempor exercitation occaecat ad et veniam et excepteur velit esse eu et ut ipsum consectetur aliquip do quis voluptate cupidatat eu ut consequat adipisicing occaecat adipisicing proident laborum laboris deserunt in laborum est anim ad non"/>
+                tools:text="or ut tempor exercitation occaecat ad et veniam et excepteur velit esse eu et ut ipsum consectetur aliquip do quis voluptate cupidatat eu ut consequat adipisicing occaecat adipisicing proident laborum laboris deserunt in laborum est anim ad non"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 
-            <Button
+
+    <Button
                 android:id="@+id/btnAddToList"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -121,7 +132,6 @@
                 android:layout_marginBottom="@dimen/margin_large"
                 app:layout_constraintEnd_toStartOf="@id/btnAddToCart"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvDescription"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
             <Button
@@ -141,7 +151,5 @@
                 app:layout_constraintTop_toTopOf="@id/btnAddToList"
                 app:layout_constraintBottom_toBottomOf="@id/btnAddToList"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

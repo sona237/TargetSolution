@@ -13,7 +13,9 @@ open class Deal (
     @SerializedName("price") var price: String? = null,
     @SerializedName("guid") var guid: String? = null,
     @SerializedName("aisle") var aisle: String? = null,
-    @SerializedName("_id") var _id: String? = null,
+    @SerializedName("isFavourite") var isFavourite : Boolean? = false,
+    @SerializedName("addedToCart") var addedToCart : Boolean? = false,
+    @PrimaryKey @SerializedName("_id") var _id: String? = null,
     @SerializedName("index") var index : Int? =0,
     var viewType: Int = 1
     ): RealmObject(){
