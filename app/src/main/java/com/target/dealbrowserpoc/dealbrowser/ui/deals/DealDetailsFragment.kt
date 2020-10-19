@@ -38,6 +38,8 @@ class DealDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //set the title on tool bar
         if (activity != null) {
             (activity as DealsListActivity).supportActionBar?.title = getString(R.string.dealDetails)
         }

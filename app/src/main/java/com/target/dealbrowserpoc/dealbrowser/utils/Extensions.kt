@@ -10,7 +10,9 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
-
+import io.realm.Realm
+import io.realm.RealmList
+import io.realm.RealmObject
  /**
      * @param imageUrl : The url to load the image
      * @param requestOptions
@@ -59,4 +61,15 @@ fun ImageView.loadImageUrl(
 
     })
     builder.into(this)
+}
+
+fun List<RealmObject>.save(realm: Realm?) {
+    realm?.let {
+        it.beginTransaction()
+        val realmList = RealmList<RealmObject>()
+        realmList.addAll(this)
+        it.insertOrUpdate(realmList)
+        it.commitTransaction()
+        it.close()
+    }
 }

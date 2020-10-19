@@ -1,6 +1,8 @@
 package com.target.dealbrowserpoc.dealbrowser.enitity
 
 import com.google.gson.annotations.SerializedName
+import io.realm.RealmObject
+import io.realm.annotations.PrimaryKey
 import java.io.Serializable
 
 open class Deal (
@@ -14,4 +16,6 @@ open class Deal (
     @SerializedName("_id") var _id: String? = null,
     @SerializedName("index") var index : Int? =0,
     var viewType: Int = 1
-    ):Serializable
+    ): RealmObject(){
+
+}

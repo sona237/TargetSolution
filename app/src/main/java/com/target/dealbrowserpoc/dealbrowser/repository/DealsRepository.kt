@@ -5,6 +5,7 @@ import com.target.dealbrowserpoc.dealbrowser.R
 import com.target.dealbrowserpoc.dealbrowser.application.TargetApplication
 import com.target.dealbrowserpoc.dealbrowser.enitity.DataWrapper
 import com.target.dealbrowserpoc.dealbrowser.enitity.Deal
+import com.target.dealbrowserpoc.dealbrowser.local.DealsLocalData
 import com.target.dealbrowserpoc.dealbrowser.network.DealsNetworkRequest
 import com.target.dealbrowserpoc.dealbrowser.network.NetworkInterface
 import com.target.dealbrowserpoc.dealbrowser.network.NetworkResponse
@@ -16,6 +17,8 @@ import com.target.dealbrowserpoc.dealbrowser.utils.Helper
 
 class DealsRepository {
     private val mDealsNetworkRequest = DealsNetworkRequest
+    private val mDealsLocal = DealsLocalData
+
 
     companion object {
         val instance = DealsRepository()
@@ -38,6 +41,9 @@ class DealsRepository {
         mDealsNetworkRequest.fetchAllDeals(object :
             NetworkInterface<Deal> {
             override fun onRequestSuccess(data: MutableList<Deal>) {
+
+                mDealsLocal.saveOrderList(data)
+               // mDealsLocal.getAllDeals()
 
                 liveData.value = DataWrapper(
                     data = data,
