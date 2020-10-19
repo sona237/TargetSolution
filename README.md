@@ -11,6 +11,8 @@ The solution follows MVVM architecture using Android Jetpack components.
 
 Retrofit for API calls.
 
+Realm for saving api result in local db for further use (adding to list, cart, etc)
+
 Stetho for debugging netwrok calls via Chrome.
 
 Shimmer effect for laoding data placeholder.
