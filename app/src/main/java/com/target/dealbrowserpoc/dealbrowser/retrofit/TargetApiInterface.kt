@@ -10,9 +10,4 @@ interface TargetApiInterface {
     @GET("deals")
     fun getAllDeals(): Call<ServerResponse<Deal>>?
 
-  /*  @GET("deals")
-    fun getAllDeals(): Call<ServerResponse<DealDetails>>*/
-
-    /*@GET("users?q=rokano")
-    fun getUsers(): Call<UsersList?>?*/
 }

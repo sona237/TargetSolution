@@ -86,7 +86,6 @@ class DealsListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             itemView.let {
 
                 it.setOnClickListener {
-                    println("@#@#clicked")
                     onDealSelected.invoke(deal, position)
                 }
 
@@ -96,14 +95,13 @@ class DealsListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 it.tvShip.text = "ship"
                 it.tvMedian.text = "or"
 
-             //   val imageUrl = "https://upload.wikimedia.org/wikipedia/commons/c/c5/Target_Corporation_logo_%28vector%29.svg"
-
+               var imageUrl = "https://loremflickr.com/180/350/" + deal.index
+                deal.imageUrl = imageUrl
 
                 try {
                     it.itemImage.loadImageUrl(
-                        deal.imageUrl ?: "",
-                        roundedCorners = false,
-                        placeholder = R.drawable.default_item
+                        imageUrl,
+                        placeholder = R.drawable.image_not_available
                     )
 
                 } catch (e: Exception) {
@@ -114,7 +112,7 @@ class DealsListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun getItemViewType(position: Int): Int {
-        return (mDeals.get(position).viewType)
+        return (mDeals[position].viewType)
     }
 
 
@@ -131,7 +129,7 @@ class DealsListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     open class DealLoadingViewHolder(
-        var view: View
+        view: View
     ) : RecyclerView.ViewHolder(view) {
         private val shimmerFrameLayout: ShimmerFrameLayout = view.shimmerFrameLayout
 

@@ -44,6 +44,8 @@ class DealDetailsFragment : Fragment() {
         tvPrice.text = dealsViewModel.mSelectedDeal.value?.price
 
         val salePrice = dealsViewModel.mSelectedDeal.value?.salePrice
+
+        //if sale price is null, set actual price in sale price text view and do not strike the actual price text
         if(salePrice == null){
             tvSalePrice.text = dealsViewModel.mSelectedDeal.value?.price
 
@@ -57,8 +59,7 @@ class DealDetailsFragment : Fragment() {
         try {
             itemImage.loadImageUrl(
                 dealsViewModel.mSelectedDeal.value?.imageUrl ?: "",
-                roundedCorners = false,
-                placeholder = R.drawable.default_item
+                placeholder = R.drawable.image_not_available
             )
 
         } catch (e: Exception) {

@@ -7,4 +7,5 @@
     <string name="addToCart">add to cart</string>
     <string name="allDeals">All Deals</string>
     <string name="dealDetails">Deal Details</string>
+    <string name="errorOccurred">An error occurred, please try later</string>
 </resources>

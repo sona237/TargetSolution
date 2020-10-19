@@ -1,33 +1,29 @@
 package com.target.dealbrowserpoc.dealbrowser.utils
 
+import android.annotation.SuppressLint
 import android.graphics.drawable.Drawable
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
-import com.bumptech.glide.load.resource.bitmap.CenterCrop
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 
 
+@SuppressLint("CheckResult")
 fun ImageView.loadImageUrl(
     imageUrl: String?,
     requestOptions: RequestOptions = RequestOptions.centerCropTransform(),
-    roundedCorners: Boolean = false, width: Int = 0, height: Int = 0
+   width: Int = 0, height: Int = 0
     , placeholder: Int? = null,
     listenImage: (Boolean) -> Unit = {}
 ) {
 
-    val options = if (roundedCorners) {
-        RequestOptions().transforms(CenterCrop(), RoundedCorners(8))
-    } else requestOptions
-
     val builder = Glide.with(this)
         .load(imageUrl)
-        .apply(options.priority(Priority.HIGH))
+        .apply(requestOptions.priority(Priority.HIGH))
 
     if (width != 0)
         builder.override(width, height)

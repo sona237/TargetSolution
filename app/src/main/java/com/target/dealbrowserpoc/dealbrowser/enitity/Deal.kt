@@ -12,5 +12,6 @@ open class Deal (
     @SerializedName("guid") var guid: String? = null,
     @SerializedName("aisle") var aisle: String? = null,
     @SerializedName("_id") var _id: String? = null,
+    @SerializedName("index") var index : Int? =0,
     var viewType: Int = 1
     ):Serializable

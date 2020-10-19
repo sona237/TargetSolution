@@ -38,10 +38,10 @@ object TargetLogger {
         private fun log(cls: Class<*>, ls: LogState, msg: String) {
             if (DEBUG_ON) {
                 when (ls) {
-                    LogState.D -> Log.d(TAG_TARGET, "(${cls.simpleName}.kt:1) -- $msg")
-                    LogState.I -> Log.i(TAG_TARGET, "(${cls.simpleName}.kt:1) -- $msg")
-                    LogState.W -> Log.w(TAG_TARGET, "(${cls.simpleName}.kt:1) -- $msg")
-                    LogState.E -> Log.e(TAG_TARGET, "(${cls.simpleName}.kt:1) -- $msg")
+                    LogState.D -> Log.d(TAG_TARGET, "(${cls.simpleName}.kt) -- $msg")
+                    LogState.I -> Log.i(TAG_TARGET, "(${cls.simpleName}.kt) -- $msg")
+                    LogState.W -> Log.w(TAG_TARGET, "(${cls.simpleName}.kt) -- $msg")
+                    LogState.E -> Log.e(TAG_TARGET, "(${cls.simpleName}.kt) -- $msg")
                 }
             }
         }

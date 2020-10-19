@@ -17,10 +17,6 @@ class DealsRepository {
         val instance = DealsRepository()
     }
 
-   /* fun getAllDeals(): LiveData<DealsListLiveData> {
-        return DealsNetworkRequest.getAllDeals()
-    }*/
-
     fun fetchAllDeals(liveData : MutableLiveData<DataWrapper<Deal>>){
         liveData.value = DataWrapper(
             data = null,
@@ -54,7 +50,6 @@ class DealsRepository {
                     )
             }
         })
-
     }
 
 }
