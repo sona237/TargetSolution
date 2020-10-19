@@ -38,6 +38,10 @@ class DealsListActivity : AppCompatActivity() {
 
     }
 
+    /**
+     * This function observes the DealsNavigationSteps livedata and performs operation accordingly by loading the relevant fragment.
+     * The livedata gets updated as and when user navigates through the app
+     */
     private fun observeNavigationSteps(){
         dealsViewModel.dealNavigationStep.observe(this, Observer{
             if(it == DealsNavigationSteps.DEAL_SELECTED){

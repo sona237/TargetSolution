@@ -5,6 +5,9 @@ import com.target.dealbrowserpoc.dealbrowser.responses.ServerResponse
 import retrofit2.Call
 import retrofit2.http.GET
 
+/*
+* Interface to define all API calls
+* */
 interface TargetApiInterface {
 
     @GET("deals")

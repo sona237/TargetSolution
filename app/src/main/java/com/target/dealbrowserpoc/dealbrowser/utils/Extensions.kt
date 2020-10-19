@@ -11,7 +11,11 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 
-
+ /**
+     * @param imageUrl : The url to load the image
+     * @param requestOptions
+     * @param placeholder : Default image to show if url fails to provide image
+     */
 @SuppressLint("CheckResult")
 fun ImageView.loadImageUrl(
     imageUrl: String?,

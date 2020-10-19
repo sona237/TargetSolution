@@ -14,6 +14,10 @@ import com.target.dealbrowserpoc.dealbrowser.viewModel.DealsViewModel
 import com.target.dealbrowserpoc.dealbrowser.viewModel.DealsViewModelFactory
 import kotlinx.android.synthetic.main.fragment_deal_details.*
 
+/*
+* Fragment to to show details of a deal. This fragment is loaded when a deal is selected from deals list fragment
+*/
+
 class DealDetailsFragment : Fragment() {
     private val dealsViewModelFactory = DealsViewModelFactory()
     private val dealsViewModel: DealsViewModel by activityViewModels { dealsViewModelFactory }

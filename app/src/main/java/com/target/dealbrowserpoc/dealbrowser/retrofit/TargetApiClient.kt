@@ -9,13 +9,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class TargetApiClient {
         companion object {
-        var retrofit: Retrofit? = null
+        private var retrofit: Retrofit? = null
         private const val API_BASE_URL = "https://target-deals.herokuapp.com/api/"
 
         fun getClient(): TargetApiInterface {
 
+            //Stetho Added to debug network request in chrome
             val okHttpClient = OkHttpClient.Builder()
-                .addNetworkInterceptor(if (BuildConfig.DEBUG) StethoInterceptor() else BlankInterceptor()) // Added to debug network request in chrome
+                .addNetworkInterceptor(if (BuildConfig.DEBUG) StethoInterceptor() else BlankInterceptor())
                 .build()
 
 

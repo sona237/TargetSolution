@@ -10,6 +10,10 @@ import com.target.dealbrowserpoc.dealbrowser.network.NetworkInterface
 import com.target.dealbrowserpoc.dealbrowser.network.NetworkResponse
 import com.target.dealbrowserpoc.dealbrowser.utils.Helper
 
+/*
+* Repository class to fetch data either from local storage or api based on the scenarios
+*/
+
 class DealsRepository {
     private val mDealsNetworkRequest = DealsNetworkRequest
 

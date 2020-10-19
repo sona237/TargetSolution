@@ -18,6 +18,9 @@ import com.target.dealbrowserpoc.dealbrowser.viewModel.DealsViewModel
 import com.target.dealbrowserpoc.dealbrowser.viewModel.DealsViewModelFactory
 import kotlinx.android.synthetic.main.fragment_deals_list.*
 
+/*
+Fragment to show all deals once they are fetched from server
+ */
 class DealsListFragment : Fragment() {
     private val dealsViewModelFactory = DealsViewModelFactory()
     private val dealsViewModel: DealsViewModel by activityViewModels { dealsViewModelFactory }
